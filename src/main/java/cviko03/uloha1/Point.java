@@ -1,4 +1,4 @@
-package cviko03.zadanie;
+package cviko03.uloha1;
 
 public class Point {
 

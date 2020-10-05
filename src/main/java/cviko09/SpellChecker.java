@@ -1,4 +1,4 @@
-package cviko09.zadanie;
+package cviko09;
 
 import java.text.BreakIterator;
 import java.util.ArrayList;

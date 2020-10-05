@@ -1,4 +1,4 @@
-package cviko04.zadanie;
+package cviko04;
 
 import java.io.File;
 import java.util.Map;

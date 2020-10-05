@@ -29,7 +29,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.3</version>
                 <configuration>
-                    <mainClass>cviko09.zadanie.MainApp</mainClass>
+                    <mainClass>cviko09.MainApp</mainClass>
                 </configuration>
             </plugin>
             <plugin>

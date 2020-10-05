@@ -1,4 +1,4 @@
-package cviko09.zadanie;
+package cviko09;
 
 import javafx.application.Application;
 import javafx.beans.value.ChangeListener;
@@ -16,7 +16,7 @@ public class MainApp extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
         BorderPane rootPane = new BorderPane();
-        cviko09.zadanie.RedGreenPane redGreenPane = new cviko09.zadanie.RedGreenPane();
+        final RedGreenPane redGreenPane = new RedGreenPane();
         TextArea textArea = new TextArea();
         rootPane.setCenter(textArea);
         rootPane.setBottom(redGreenPane);
@@ -31,8 +31,8 @@ public class MainApp extends Application {
 
 			@Override
 			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-				cviko09.zadanie.SpellChecker spellChecker = new cviko09.zadanie.SpellChecker();
-				final List<cviko09.zadanie.SpellChecker.SpellcheckBoundary> kontrola = spellChecker.check(newValue);
+				SpellChecker spellChecker = new SpellChecker();
+				final List<SpellChecker.SpellcheckBoundary> kontrola = spellChecker.check(newValue);
 				boolean isOK = kontrola.isEmpty();
 				System.out.println(newValue + " kontrola ok: " + isOK);		
 				redGreenPane.setGreenState(isOK);

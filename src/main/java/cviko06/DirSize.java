@@ -1,4 +1,4 @@
-package cviko06.zadanie;
+package cviko06;
 
 import java.io.File;
 

@@ -1,4 +1,4 @@
-package cviko09.zadanie;
+package cviko09;
 
 import javafx.beans.property.BooleanProperty;
 import javafx.beans.property.SimpleBooleanProperty;

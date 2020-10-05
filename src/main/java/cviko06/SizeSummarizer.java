@@ -1,4 +1,4 @@
-package cviko06.zadanie;
+package cviko06;
 
 import java.io.File;
 import java.util.concurrent.ExecutionException;
@@ -14,7 +14,7 @@ public class SizeSummarizer {
 		File[] files = rootDir.listFiles();
 		for (int i = 0; i < files.length; i++) {
 			if (files[i].isDirectory()) {
-				cviko06.zadanie.DirSize dirSize = new cviko06.zadanie.DirSize(files[i],analyzeDir(files[i]));
+				DirSize dirSize = new DirSize(files[i],analyzeDir(files[i]));
 				System.out.println("Čas: "+ (System.nanoTime()-start)/1000000 +" ms   " + dirSize);
 			}
 		}

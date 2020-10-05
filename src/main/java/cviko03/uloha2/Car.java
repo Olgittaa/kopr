@@ -1,4 +1,4 @@
-package cviko03.zadanie;
+package cviko03.uloha2;
 
 public class Car implements Runnable {
 
@@ -17,8 +17,8 @@ public class Car implements Runnable {
 				Point position = trafficTracker.getLocation(name);
 				try {
 					int movement = (int) (4*Math.random());
-					int newx = position.getX()+Car.movements[movement][0];
-					int newy = position.getY()+Car.movements[movement][1];
+					int newx = position.getX()+ Car.movements[movement][0];
+					int newy = position.getY()+ Car.movements[movement][1];
 					trafficTracker.setLocation(name,newx,newy);
 				} catch(Exception e) {
 					System.err.println(name + ": Niekto mi zmazal auticko!");

@@ -1,4 +1,4 @@
-package cviko03.zadanie;
+package cviko03.uloha3;
 
 import java.util.Iterator;
 import java.util.Map;
