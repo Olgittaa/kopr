@@ -1,4 +1,4 @@
-package cviko06;
+package cviko06.uloha4;
 
 import java.io.File;
 

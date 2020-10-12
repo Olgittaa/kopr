@@ -1,4 +1,4 @@
-package cviko5.uloha1;
+package cviko05.uloha1;
 
 import java.io.File;
 import java.util.concurrent.BlockingDeque;
