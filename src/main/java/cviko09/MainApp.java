@@ -1,20 +1,20 @@
 package cviko09;
 
 import javafx.application.Application;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
 import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
-import java.util.List;
-
 
 public class MainApp extends Application {
 
-	@Override
-	public void start(Stage primaryStage) throws Exception {
+    public static void main(String[] args) {
+        launch(args);
+    }
+
+    @Override
+    public void start(Stage primaryStage) throws Exception {
         BorderPane rootPane = new BorderPane();
         final RedGreenPane redGreenPane = new RedGreenPane();
         TextArea textArea = new TextArea();
@@ -24,25 +24,11 @@ public class MainApp extends Application {
         Scene scene = new Scene(rootPane);
 
         primaryStage.setScene(scene);
-		primaryStage.setTitle("KOPR editor");
-		primaryStage.show();
-		
-		textArea.textProperty().addListener(new ChangeListener<String>() {
+        primaryStage.setTitle("KOPR editor");
+        primaryStage.show();
 
-			@Override
-			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-				SpellChecker spellChecker = new SpellChecker();
-				final List<SpellChecker.SpellcheckBoundary> kontrola = spellChecker.check(newValue);
-				boolean isOK = kontrola.isEmpty();
-				System.out.println(newValue + " kontrola ok: " + isOK);		
-				redGreenPane.setGreenState(isOK);
-			}
-		});
-	}
-
-	public static void main(String[] args) {
-		launch(args);
-	}
-	
-	
+        SpellCheckerService service = new SpellCheckerService(textArea.textProperty());
+        redGreenPane.greenStateProperty().bind(service.valueProperty());
+        service.start();
+    }
 }
